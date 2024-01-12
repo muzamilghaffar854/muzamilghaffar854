@@ -1,83 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Image Gallery | CodeCraftsman</title>
   <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: sans-serif;
-      perspective: 800px;
     }
 
-    .cube {
-      width: 200px;
-      height: 200px;
-      position: relative;
-      transform-style: preserve-3d;
-      animation: rotateCube 10s infinite linear;
-    }
-
-    .face {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 2px solid #2980b9;
+    body {
+      height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
-      font-weight: bold;
+      align-items: center;
+      background: #1e272e;
+    }
+
+    .container {
+      width: 800px;
+    }
+
+    .custom-nav {
+      width: 100%;
+      height: 100px; 
+      border-radius: 8px;
+      display: flex;
+      align-items: center; 
+      text-align: center;
+      position: relative;
+      background: #3498db;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-nav label {
+      flex: 1;
+      line-height: 50px; 
+      font-size: 23px;
+      font-weight: 500;
       color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .face:nth-child(1) { 
-      background-color: #3498db; 
-      transform: rotateY(0deg) translateZ(100px);
-    }
-    .face:nth-child(2) { 
-      background-color: #27ae60; 
-      transform: rotateY(90deg) translateZ(100px);
-    }
-    .face:nth-child(3) { 
-      background-color: #e74c3c; 
-      transform: rotateY(180deg) translateZ(100px);
-    }
-    .face:nth-child(4) { 
-      background-color: #f39c12;
-      transform: rotateY(-90deg) translateZ(100px);
-    }
-    .face:nth-child(5) { 
-      background-color: #8e44ad;
-      transform: rotateX(90deg) translateZ(100px);
-    }
-    .face:nth-child(6) { 
-      background-color: #2c3e50; 
-      transform: rotateX(-90deg) translateZ(100px);
+    .custom-nav label:hover {
+      background: #2c3e50;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      line-height: 100px;
     }
 
-    @keyframes rotateCube {
-      0% {
-        transform: rotateX(0) rotateY(0) rotateZ(0);
-      }
-      100% {
-        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-      }
+    .custom-nav label i {
+      margin-right: 4px;
+    }
+
+    .custom-nav .slider {
+      position: absolute;
+      height: 100%;
+      width: 20%;
+      background: #e74c3c;
+      border-radius: 8px;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 1;
+    }
+
+    input[type=radio] {
+      display: none;
+    }
+
+    #custom-home:checked~.custom-nav .slider {
+      left: 0;
+    }
+
+    #custom-blog:checked~.custom-nav .slider {
+      left: 20%;
+    }
+
+    #custom-code:checked~.custom-nav .slider {
+      left: 40%;
+    }
+
+    #custom-help:checked~.custom-nav .slider {
+      left: 60%;
+    }
+
+    #custom-about:checked~.custom-nav .slider {
+      left: 80%;
     }
   </style>
 </head>
+
 <body>
-  <div class="cube">
-    <div class="face">Code Craftsman</div>
-    <div class="face">HTML CSS</div>
-    <div class="face">JavaScript</div>
-    <div class="face">WebDevelopment</div>
-    <div class="face">Programming</div>
-    <div class="face">"UI/UX Design</div>
+  <div class="container">
+    <input type="radio" name="s" id="custom-home" checked>
+    <input type="radio" name="s" id="custom-blog">
+    <input type="radio" name="s" id="custom-code">
+    <input type="radio" name="s" id="custom-help">
+    <input type="radio" name="s" id="custom-about">
+    <div class="custom-nav">
+      <div class="slider"></div>
+      <label for="custom-home"><i class="fas fa-home"></i>Home</label>
+      <label for="custom-blog"><i class="fas fa-blog"></i>Blog</label>
+      <label for="custom-code"><i class="fas fa-code"></i>Code</label>
+      <label for="custom-help"><i class="fas fa-envelope"></i>Help</label>
+      <label for="custom-about"><i class="fas fa-user"></i>About</label>
+    </div>
   </div>
 </body>
+
 </html>
