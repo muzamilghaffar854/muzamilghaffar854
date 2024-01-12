@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Image Gallery | CodeCraftsman</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1e272e;
+    }
+
+    .container {
+      width: 800px;
+    }
+
+    .custom-nav {
+      width: 100%;
+      height: 100px; 
+      border-radius: 8px;
+      display: flex;
+      align-items: center; 
+      text-align: center;
+      position: relative;
+      background: #3498db;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-nav label {
+      flex: 1;
+      line-height: 50px; 
+      font-size: 23px;
+      font-weight: 500;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .custom-nav label:hover {
+      background: #2c3e50;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      line-height: 100px;
+    }
+
+    .custom-nav label i {
+      margin-right: 4px;
+    }
+
+    .custom-nav .slider {
+      position: absolute;
+      height: 100%;
+      width: 20%;
+      background: #e74c3c;
+      border-radius: 8px;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 1;
+    }
+
+    input[type=radio] {
+      display: none;
+    }
+
+    #custom-home:checked~.custom-nav .slider {
+      left: 0;
+    }
+
+    #custom-blog:checked~.custom-nav .slider {
+      left: 20%;
+    }
+
+    #custom-code:checked~.custom-nav .slider {
+      left: 40%;
+    }
+
+    #custom-help:checked~.custom-nav .slider {
+      left: 60%;
+    }
+
+    #custom-about:checked~.custom-nav .slider {
+      left: 80%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <input type="radio" name="s" id="custom-home" checked>
+    <input type="radio" name="s" id="custom-blog">
+    <input type="radio" name="s" id="custom-code">
+    <input type="radio" name="s" id="custom-help">
+    <input type="radio" name="s" id="custom-about">
+    <div class="custom-nav">
+      <div class="slider"></div>
+      <label for="custom-home"><i class="fas fa-home"></i>Home</label>
+      <label for="custom-blog"><i class="fas fa-blog"></i>Blog</label>
+      <label for="custom-code"><i class="fas fa-code"></i>Code</label>
+      <label for="custom-help"><i class="fas fa-envelope"></i>Help</label>
+      <label for="custom-about"><i class="fas fa-user"></i>About</label>
+    </div>
+  </div>
+</body>
+
+</html>
