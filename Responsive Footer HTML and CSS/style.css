@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #2C3E50;
+  padding: 40px 20px;
+  color: #ECF0F1;
+}
+
+.footer .footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.footer-row .footer-col h4 {
+  color: #3498DB;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.footer-col .links {
+  margin-top: 15px;
+}
+
+.footer-col .links li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.footer-col .links li a {
+  text-decoration: none;
+  color: #ECF0F1;
+  transition: color 0.3s ease;
+}
+
+.footer-col .links li a:hover {
+  color: #3498DB;
+}
+
+.footer-col p {
+  margin: 15px 0;
+  color: #BDC3C7;
+}
+
+.footer-col form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col input {
+  height: 40px;
+  border-radius: 6px;
+  background: #34495E;
+  width: 100%;
+  outline: none;
+  border: 1px solid #2C3E50;
+  caret-color: #ECF0F1;
+  color: #ECF0F1;
+  padding: 0 10px;
+}
+
+.footer-col input::placeholder {
+  color: #BDC3C7;
+}
+
+.footer-col form button {
+  background: #3498DB;
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #ECF0F1;
+  transition: background 0.2s ease;
+}
+
+.footer-col form button:hover {
+  background: #2C3E50;
+}
+
+.footer-col .icons {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.footer-col .icons i {
+  color: #BDC3C7;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-col .icons i:hover  {
+  color: #3498DB;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px;
+  }
+
+  .footer .footer-row {
+    gap: 1rem;
+  }
+
+  .footer-col form :where(input, button) {
+    width: 100%;
+  }
+
+  .footer-col form button {
+    margin: 10px 0 0 0;
+  }
+}
